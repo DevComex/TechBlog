@@ -11,3 +11,13 @@ Port 47289
 ```
 systemctl restart sshd
 ```
+
+### 在防火墙策略中开放特定端口
+首先添加策略(--permanent表示设置为永久策略，如果不加此选项表示重启后失效)
+```
+firewall-cmd --zone=public --add-port=47289/tcp --permanent
+```
+重新载入新的配置
+```
+firewall-cmd --reload
+```
