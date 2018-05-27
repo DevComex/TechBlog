@@ -27,7 +27,7 @@ firewall-cmd --reload
 ```
 fdisk -l
 ```
-! https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-28_013821.png
+![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-28_013821.png)
 发现已有分区/dev/md127，只需将其挂载到我们想要的目录即可
 首先创建我们所需的目录
 ```
