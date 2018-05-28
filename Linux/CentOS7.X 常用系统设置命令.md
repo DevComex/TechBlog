@@ -64,3 +64,13 @@ echo LANG=\"en_US.UTF-8\" > /etc/locale.conf
 ```
 reboot
 ```
+
+### 卸载软件
+查看已经安装的软件
+```
+yum list installed | grep qt
+```
+卸载指定名称的软件包
+```
+rpm -e qt-devel.x86_64
+```
