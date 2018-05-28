@@ -50,3 +50,17 @@ mount -a
 ```
 df -h
 ```
+
+### 修改中文语言为英文语言
+首先备份相关配置文件
+```
+cp /etc/locale.conf /home/locale.conf.`date +%Y%m%d.%H%M%S`
+```
+然后修改此配置文件内容
+```
+echo LANG=\"en_US.UTF-8\" > /etc/locale.conf
+```
+最后重启系统即可
+```
+reboot
+```
