@@ -18,7 +18,7 @@ tar -zxf qbittorrent-4.1.1.tar.gz
 ### 依赖项安装配置
 首先需要安装依赖项
 ```
-yum install gcc qt-devel boost boost-devel openssl-devel -y
+yum install gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ -y
 ```
 
 添加QT4路径到环境变量（修改/etc/profile）
