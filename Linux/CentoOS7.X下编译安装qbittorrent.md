@@ -1,4 +1,4 @@
-###  下载安装介质
+### 下载安装介质
 通过浏览器打开页面获取下载地址
 ```
 wget https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-4.1.1/qbittorrent-4.1.1.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fqbittorrent%2Ffiles%2Fqbittorrent%2Fqbittorrent-4.1.1%2Fqbittorrent-4.1.1.tar.gz%2Fdownload&ts=1528383694
