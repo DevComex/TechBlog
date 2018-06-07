@@ -85,7 +85,20 @@ rpm -e qt-devel.x86_64
 ### CentOS7 支持NTFS文件系统
 ```
 wget https://tuxera.com/opensource/ntfs-3g_ntfsprogs-2017.3.23.tgz
+tar -zxf ntfs-3g_ntfsprogs-2017.3.23.tgz 
+cd ntfs-3g_ntfsprogs-2017.3.23/
 ./configure
 make
 make install
+```
+
+### 使用ntfs-3g挂载NTFS文件系统
+创建目录并挂载（重启后失效）
+```
+mdkir /comex
+mount -t ntfs-3g /dev/sdb1 /comex
+```
+设置重启后自动挂载（编辑文件/etc/fstab，添加如下内容）
+```
+/dev/sdb1 /comex ntfs-3g defaults 0 0
 ```
