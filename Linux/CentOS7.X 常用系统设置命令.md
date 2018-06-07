@@ -22,6 +22,13 @@ firewall-cmd --zone=public --add-port=47289/tcp --permanent
 firewall-cmd --reload
 ```
 
+### 在SELinux中开放特定端口
+执行下述命令
+```
+semanage port -a -t ssh_port_t -p tcp 47289
+reboot
+```
+
 ### 将已有分区的磁盘挂载到系统（CentOS）中
 首先查看现有的磁盘情况
 ```

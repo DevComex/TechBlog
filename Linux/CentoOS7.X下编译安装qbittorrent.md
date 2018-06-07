@@ -10,11 +10,7 @@ wget https://excellmedia.dl.sourceforge.net/project/qbittorrent/qbittorrent/qbit
 ```
 https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120126.png
 
-### 解压文件
-```
-tar -zxf qbittorrent-3.3.11.tar.gz
-```
-https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120526.png
+
 
 ### 依赖项安装配置
 首先需要安装GCC
@@ -55,16 +51,27 @@ export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
 export libtorrent_LIBS=/opt/libtorrent/lib/
 ```
 
+```
+yum install qt5-qtbase-devel qt5-linguist -y
+```
+### 解压文件
+```
+tar -zxf qbittorrent-3.3.11.tar.gz
+```
+https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120526.png
+
 ### Installation:
 For installation, follow the instructions from INSTALL file, but simple:
 
 ```
 cd qbittorrent-3.3.11
-./configure --prefix=/opt/qbittorrent --with-qt4
-![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-28_074739.png)
+export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
+export libtorrent_LIBS=/opt/libtorrent/lib/
+./configure --prefix=/opt/qbittorrent
 make && make install
 qbittorrent
 ```
+![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-28_074739.png)
 在执行make时会遇到如下错误
 ```
 cd src/ && make -f Makefile 
