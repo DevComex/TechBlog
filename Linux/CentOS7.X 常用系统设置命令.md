@@ -81,3 +81,11 @@ yum list installed | grep qt
 ```
 rpm -e qt-devel.x86_64
 ```
+
+### CentOS7 支持NTFS文件系统
+```
+wget https://tuxera.com/opensource/ntfs-3g_ntfsprogs-2017.3.23.tgz
+./configure
+make
+make install
+```

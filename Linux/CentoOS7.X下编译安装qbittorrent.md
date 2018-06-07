@@ -1,43 +1,35 @@
-首先从下述页面获取下载链接：
-https://www.qbittorrent.org/download.php
-我们得到Tar.gz的链接为：
-https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.0/qbittorrent-4.1.0.tar.gz/download
-更换其中的版本为3.3.11
-https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-3.3.11/qbittorrent-3.3.11.tar.gz/download
+
 ### 通过浏览器打开页面获取下载地址
 ```
-wget https://excellmedia.dl.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-3.3.11/qbittorrent-3.3.11.tar.gz
+wget https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-4.1.1/qbittorrent-4.1.1.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fqbittorrent%2Ffiles%2Fqbittorrent%2Fqbittorrent-4.1.1%2Fqbittorrent-4.1.1.tar.gz%2Fdownload&ts=1528383694
 ```
-https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120126.png
+![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120126.png)
 
+修改文件名
+```
+mv qbittorrent-4.1.1.tar.gz\?r\=https\:%2F%2Fsourceforge.net%2Fprojects%2Fqbittorrent%2Ffiles%2Fqbittorrent%2Fqbittorrent-4.1.1%2Fqbittorrent-4.1.1.tar.gz%2Fdownload qbittorrent-4.1.1.tar.gz
+```
 
+解压
+```
+tar -zxf qbittorrent-4.1.1.tar.gz
+```
 
 ### 依赖项安装配置
-首先需要安装GCC
+首先需要安装依赖项
 ```
-yum install gcc -y
+yum install gcc qt-devel boost boost-devel openssl-devel -y
 ```
-安装qt-devel
-```
-yum install qt-devel -y
-```
+
 添加QT4路径到环境变量（修改/etc/profile）
 ```
 QTDIR=/usr/lib64/qt4
 PATH=$PATH:$HOME/bin:$QTDIR/bin
 export PATH QTDIR
 ```
-最后重新登陆Linux,使其生效
-```
-exit
-```
-安装依赖项boost-devel
-```
-yum install boost boost-devel -y
-```
+
 安装依赖项libtorrent-rasterbar
 ```
-yum install openssl-devel
 wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_7/libtorrent-rasterbar-1.1.7.tar.gz
 tar -zxf libtorrent-rasterbar-1.1.7.tar.gz
 cd libtorrent-rasterbar-1.1.7/
