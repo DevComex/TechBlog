@@ -50,7 +50,7 @@ yum install qt5-qtbase-devel qt5-linguist -y
 ```
 tar -zxf qbittorrent-3.3.11.tar.gz
 ```
-https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120526.png
+![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120526.png)
 
 ### Installation:
 For installation, follow the instructions from INSTALL file, but simple:
@@ -64,6 +64,8 @@ make && make install
 qbittorrent
 ```
 ![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-28_074739.png)
+
+# 常见问题
 在执行make时会遇到如下错误
 ```
 cd src/ && make -f Makefile 
