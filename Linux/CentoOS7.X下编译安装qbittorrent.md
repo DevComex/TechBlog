@@ -18,7 +18,7 @@ tar -zxf qbittorrent-4.1.1.tar.gz
 ### 依赖项安装配置
 首先需要安装依赖项
 ```
-yum install gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ -y
+yum install gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ qt5-qtbase-devel qt5-linguist qt5-qtsvg qt5-qtsvg-devel -y
 ```
 
 添加QT4路径到环境变量（修改/etc/profile）
@@ -37,15 +37,7 @@ cd libtorrent-rasterbar-1.1.7/
 make
 make install
 ```
-因为安装在非默认目录，我们还需要设置环境变量
-```
-export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
-export libtorrent_LIBS=/opt/libtorrent/lib/
-```
 
-```
-yum install qt5-qtbase-devel qt5-linguist -y
-```
 ### 解压文件
 ```
 tar -zxf qbittorrent-3.3.11.tar.gz
@@ -56,7 +48,7 @@ tar -zxf qbittorrent-3.3.11.tar.gz
 For installation, follow the instructions from INSTALL file, but simple:
 
 ```
-cd qbittorrent-3.3.11
+cd qbittorrent-4.1.1/
 export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
 export libtorrent_LIBS=/opt/libtorrent/lib/
 ./configure --prefix=/opt/qbittorrent
