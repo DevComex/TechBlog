@@ -23,7 +23,7 @@ firewall-cmd --reload
 ```
 
 ### 在SELinux中开放特定端口
-执行下述命令
+执行下述命令(http_port_t/ssh_port_t)
 ```
 semanage port -a -t ssh_port_t -p tcp 47289
 reboot
