@@ -18,7 +18,8 @@ tar -zxf qbittorrent-4.1.1.tar.gz
 ### 依赖项安装配置
 首先需要安装依赖项
 ```
-yum install gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ qt5-qtbase-devel qt5-linguist qt5-qtsvg qt5-qtsvg-devel -y
+yum install epel-release gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ qt5-qtbase-devel qt5-linguist qt5-qtsvg qt5-qtsvg-devel -y
+yum -y groupinstall "Development Tools"
 ```
 
 添加QT4路径到环境变量（修改/etc/profile）
@@ -33,14 +34,18 @@ export PATH QTDIR
 wget https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_7/libtorrent-rasterbar-1.1.7.tar.gz
 tar -zxf libtorrent-rasterbar-1.1.7.tar.gz
 cd libtorrent-rasterbar-1.1.7/
-./configure --disable-debug --prefix=/opt/libtorrent --with-boost-libdir=/usr/lib64
+./configure --prefix=/usr CXXFLAGS=-std=c++11
+# ./configure --disable-debug --prefix=/opt/libtorrent 
+# --with-boost-libdir=/usr/lib64
 make
 make install
+ln -s /usr/lib/pkgconfig/libtorrent-rasterbar.pc /usr/lib64/pkgconfig/libtorrent-rasterbar.pc
+ln -s /usr/lib/libtorrent-rasterbar.so.9 /usr/lib64/libtorrent-rasterbar.so.9
 ```
 
 ### 解压文件
 ```
-tar -zxf qbittorrent-3.3.11.tar.gz
+tar -zxf qbittorrent-4.1.1.tar.gz
 ```
 ![](https://github.com/DevComex/TechBlog/blob/master/ScreenShots/ScreenShot-2018-05-27_120526.png)
 
@@ -49,9 +54,10 @@ For installation, follow the instructions from INSTALL file, but simple:
 
 ```
 cd qbittorrent-4.1.1/
-export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
-export libtorrent_LIBS=/opt/libtorrent/lib/
-./configure --prefix=/opt/qbittorrent
+# export libtorrent_CFLAGS=/opt/libtorrent/include/libtorrent/
+# export libtorrent_LIBS=/opt/libtorrent/lib/libtorrent-rasterbar.so
+# ./configure --prefix=/opt/qbittorrent
+./configure --prefix=/usr CPPFLAGS=-I/usr/include/qt5 CXXFLAGS=-std=c++11
 make && make install
 qbittorrent
 ```
