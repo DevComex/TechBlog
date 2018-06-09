@@ -7,7 +7,7 @@ yum install samba samba-common samba-client  -y
 ```
 semanage fcontext -a -t public_content_rw_t '/pt(/.*)?'
 restorecon -R -v /pt
-setsebool -P samba_export_all_ro 1
+setsebool -P samba_export_all_rw 1
 ```
 
 # 执行restorecon命令来激活修改的标签
