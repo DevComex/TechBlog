@@ -18,7 +18,7 @@ tar -zxf qbittorrent-4.1.1.tar.gz
 ### 依赖项安装配置
 首先需要安装依赖项
 ```
-yum install epel-release gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ qt5-qtbase-devel qt5-linguist qt5-qtsvg qt5-qtsvg-devel -y
+yum install epel-release gcc qt-devel boost boost-devel openssl-devel glibc-headers gcc-c++ qt5-qtbase-devel qt5-linguist qt5-qtsvg qt5-qtsvg-devel GeoIP-update -y
 yum -y groupinstall "Development Tools"
 ```
 
